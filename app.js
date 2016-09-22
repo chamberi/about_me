@@ -81,22 +81,25 @@ function launched() {
 launched();
 
 // setup counter for guesses
-for (var i = 0; i < 4; i++) {
-  var wine = parseInt(prompt('What year is the oldest bottle of wine or port I have in my cellar?'));
-  console.log('The wine variable is : ' + wine);
-//evaluate guesses against the correct answer
-  if (wine === 1938) {
-    alert('You are correct.');
-    correctCounter += 1;
-    break;
-  } else if (wine > 1938) {
-    alert('You guessed too recent. It\'s an older vintage (ie. lower number). Guess again.');
-  } else if (wine < 1938) {
-    alert('It\'s not that old of a vintage. It\'s more recent (or higher number). Guess again.');
-  } else {
-    alert('Did you enter a number?');
+function wine() {
+  for (var i = 0; i < 4; i++) {
+    var wine = parseInt(prompt('What year is the oldest bottle of wine or port I have in my cellar?'));
+    console.log('The wine variable is : ' + wine);
+  //evaluate guesses against the correct answer
+    if (wine === 1938) {
+      alert('You are correct.');
+      correctCounter += 1;
+      break;
+    } else if (wine > 1938) {
+      alert('You guessed too recent. It\'s an older vintage (ie. lower number). Guess again.');
+    } else if (wine < 1938) {
+      alert('It\'s not that old of a vintage. It\'s more recent (or higher number). Guess again.');
+    } else {
+      alert('Did you enter a number?');
+    }
   }
 }
+wine();
 
 // establish array of soccer states
 var soccerStates = ['WA', 'CT', 'MA', 'IL', 'CO', 'UT', 'CA'];
@@ -104,27 +107,31 @@ var socStaSize = soccerStates.length - 1;
 var flag = 0;
 
 // setup of guess counter
-for (var socGuesses = 0; socGuesses < 6; socGuesses++) {
-  var soccerAnswer = prompt('In what states have I seen the U.S. Men\'s Soccer team play? (Use Postal Codes).');
-  console.log('The soccerAnswer variable is: ' + soccerAnswer);
 
-// setup of array counter and set flag
-  for (var socAnsArr = 0; socAnsArr < socStaSize; socAnsArr++)
-    if (soccerAnswer === soccerStates[socAnsArr]) {
-      console.log(soccerStates[socAnsArr]);
-      flag = 1;
+function soccer() {
+  for (var socGuesses = 0; socGuesses < 6; socGuesses++) {
+    var soccerAnswer = prompt('In what states have I seen the U.S. Men\'s Soccer team play? (Use Postal Codes).');
+    console.log('The soccerAnswer variable is: ' + soccerAnswer);
+
+  // setup of array counter and set flag
+    for (var socAnsArr = 0; socAnsArr < socStaSize; socAnsArr++)
+      if (soccerAnswer === soccerStates[socAnsArr]) {
+        console.log(soccerStates[socAnsArr]);
+        flag = 1;
+        break;
+      }
+
+  // evaluate flag
+    if (flag === 1) {
+      alert('Correct.');
+      correctCounter += 1;
       break;
+    } else {
+      alert('Nope. Try again.');
     }
-
-// evaluate flag
-  if (flag === 1) {
-    alert('Correct.');
-    correctCounter += 1;
-    break;
-  } else {
-    alert('Nope. Try again.');
   }
 }
+soccer();
 
 // print out all of the answers
 var printer = '';
