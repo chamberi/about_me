@@ -1,13 +1,14 @@
 'use strict';
 
 var correctCounter = 0;
+var username;
 
-function uname() {
-  var username = prompt('What is your name?');
+function happy() {
+  username = prompt('What is your name?');
   console.log('The username is ' + username);
   alert('Hi ' + username + '! So you want to learn all about me! Please answer the following questions about me with Yes/No or Y/N.');
 }
-uname();
+happy();
 
 function work() {
   var highTechJobs = prompt('Have I worked in high-tech companies since the mid 90s?').toUpperCase();
