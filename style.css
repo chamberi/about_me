@@ -1,3 +1,7 @@
+* {
+  font-family: Verdana;
+  font-size: 14px;
+}
 div {
   background-color: #e0eeee;
   border-color: black;
@@ -23,21 +27,47 @@ header h1 {
   color: #580023;
   border: 30px 40px 0px 10px;
   text-align: center;
+  font-size: 25px;
 }
 
 article {
   padding: 10px;
   margin-top:5px;
-  width: 70%;
+  width: 60%;
   display: inline-block;
+}
+
+article p {
+  background-color: #dedee3;
+}
+
+article ul {
+  background-color: #dedee3;
+}
+
+figure {
+  display: inline-block;
+  text-align: center;
+}
+
+footer {
+  width: 60%;
+  display: inline-block;
+  margin-left: 10px;
+  background-color: #dedee3;
 }
 
 aside {
   float: right;
   margin-right: 5px;
-  font-size: 14px;
+  margin-top: -150px;
 }
 
 aside h3 {
   text-align: center;
+  font-size: 18px;
+}
+
+aside ul {
+  background-color: #dedee3;
 }
