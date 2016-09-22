@@ -60,9 +60,11 @@ if (companyLaunch === 'YES' || companyLaunch === 'Y') {
   alert(username + ', please use Yes/No or Y/N. I did launch it, had fun, and learned a great deal.');
 }
 
+// setup counter for guesses
 for (var i = 0; i < 4; i++) {
   var wine = parseInt(prompt('What year is the oldest bottle of wine or port I have in my cellar?'));
   console.log('The wine variable is : ' + wine);
+//evaluate guesses against the correct answer
   if (wine === 1938) {
     alert('You are correct.');
     correctCounter++;
@@ -76,6 +78,7 @@ for (var i = 0; i < 4; i++) {
   }
 }
 
+// establish array of soccer states
 var soccerStates = ['WA', 'CT', 'MA', 'IL', 'CO', 'UT', 'CA'];
 var socStaSize = soccerStates.length - 1;
 var flag = 0;
@@ -108,5 +111,5 @@ var printer = '';
 for (var j = 0; j < soccerStates.length; j++) {
   printer += soccerStates[j] + ' ';
 }
-alert('The states that I\'ve seen the U.S. Men\'s Soccer team play are: ' + printer);
-alert('You had ' + correctCounter + ' guesses correct. Well done.');
+alert('The states where I\'ve seen the U.S. Men\'s Soccer team play are: ' + printer);
+alert('You had ' + correctCounter + ' out of 7 guesses correct. Well done.');
