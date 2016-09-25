@@ -83,7 +83,7 @@ launched();
 // setup counter for guesses
 function wine() {
   for (var i = 0; i < 4; i++) {
-    var wine = parseInt(prompt('What year is the oldest bottle of wine or port I have in my cellar? You have 4 chances.'));
+    var wine = parseInt(prompt('What year is the oldest bottle of wine or port I have in my cellar? You have used ' + i + ' of 4 chances.'));
     console.log('The wine variable is : ' + wine);
   //evaluate guesses against the correct answer
     if (wine === 1938) {
@@ -113,7 +113,7 @@ var flag = 0;
 
 function soccer() {
   for (var socGuesses = 0; socGuesses < 6; socGuesses++) {
-    var soccerAnswer = prompt('Guess a state where I\'ve seen the U.S. Men\'s Soccer team play? (State abbreviation).');
+    var soccerAnswer = prompt('Guess a state where I\'ve seen the U.S. Men\'s Soccer team play? (State abbreviation).').toUpperCase();
     console.log('The soccerAnswer variable is: ' + soccerAnswer);
 
   // setup of array counter and set flag
@@ -130,7 +130,8 @@ function soccer() {
       correctCounter += 1;
       break;
     } else {
-      alert('Nope. Try again.');
+      var guessed = socGuesses + 1;
+      alert('Nope. You\'ve used ' + guessed + ' of 6 guesses.');
     }
   }
 }
@@ -142,4 +143,4 @@ for (var j = 0; j < soccerStates.length; j++) {
   printer += soccerStates[j] + ' ';
 }
 alert('The states where I\'ve seen the U.S. Men\'s Soccer team play are: ' + printer);
-alert('You had ' + correctCounter + ' out of 7 guesses correct. Well done.');
+alert('You answered ' + correctCounter + ' out of 7 of the questions correct. Well done.');
