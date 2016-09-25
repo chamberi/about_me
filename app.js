@@ -3,12 +3,12 @@
 var correctCounter = 0;
 var username;
 
-function happy() {
+function uname() {
   username = prompt('What is your name?');
   console.log('The username is ' + username);
   alert('Hi ' + username + '! So you want to learn all about me! Please answer the following questions about me with Yes/No or Y/N.');
 }
-happy();
+uname();
 
 function work() {
   var highTechJobs = prompt('Have I worked in high-tech companies since the mid 90s?').toUpperCase();
@@ -83,7 +83,7 @@ launched();
 // setup counter for guesses
 function wine() {
   for (var i = 0; i < 4; i++) {
-    var wine = parseInt(prompt('What year is the oldest bottle of wine or port I have in my cellar?'));
+    var wine = parseInt(prompt('What year is the oldest bottle of wine or port I have in my cellar? You have 4 chances.'));
     console.log('The wine variable is : ' + wine);
   //evaluate guesses against the correct answer
     if (wine === 1938) {
@@ -91,12 +91,15 @@ function wine() {
       correctCounter += 1;
       break;
     } else if (wine > 1938) {
-      alert('You guessed too recent. It\'s an older vintage (ie. lower number). Guess again.');
+      alert('You guessed too recent. It\'s an older vintage (ie. lower number).');
     } else if (wine < 1938) {
-      alert('It\'s not that old of a vintage. It\'s more recent (or higher number). Guess again.');
+      alert('It\'s not that old of a vintage. It\'s more recent (or higher number).');
     } else {
       alert('Did you enter a number?');
     }
+  }
+  if (i >= 4) {
+    alert('The correct year was 1938 (Kopke Port). The same year that my dad was born.');
   }
 }
 wine();
@@ -110,7 +113,7 @@ var flag = 0;
 
 function soccer() {
   for (var socGuesses = 0; socGuesses < 6; socGuesses++) {
-    var soccerAnswer = prompt('In what states have I seen the U.S. Men\'s Soccer team play? (Use Postal Codes).');
+    var soccerAnswer = prompt('Guess a state where I\'ve seen the U.S. Men\'s Soccer team play? (State abbreviation).');
     console.log('The soccerAnswer variable is: ' + soccerAnswer);
 
   // setup of array counter and set flag
